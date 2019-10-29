@@ -6,7 +6,7 @@ Created
 
 ## ALPHA 0.0.1
 
-Added hrydrogen display and buttons
+Added hydrogen display and buttons
 
 ## ALPHA 0.0.2
 
