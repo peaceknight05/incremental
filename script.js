@@ -3,7 +3,7 @@
 /*jslint esversion:6*/
 "use strict";
 
-let version = document.getElementById("version").textContent = "ALPHA 0.0.5";
+let version = document.getElementById("version").textContent = "ALPHA 0.0.6";
 
 function insertAfter(newNode, referenceNode) {
     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
@@ -31,6 +31,8 @@ let heliumExtractor = 0;
 let heliumActivated = false;
 let lithiumExtractor = 0;
 let lithiumActivated = false;
+let berylliumExtractor = 0;
+let berylliumActivated = false;
 let tickspeed = 1000;
 let hydrogenCount = document.getElementById("hydrogen-count");
 let hydrogenButton = document.getElementById("hydrogen-button");
@@ -42,9 +44,11 @@ hydrogenButton.onclick = () => {
 };
 
 let callback = () => {
+    lithiumExtractor += berylliumExtractor;
     heliumExtractor += lithiumExtractor;
     hydrogenExtractor += heliumExtractor;
     hydrogen += hydrogenExtractor;
+    lithiumButton.textContent = "Lithium Extractor (" + numberFormat(lithiumExtractor) + ")";
     heliumButton.textContent = "Helium Extractor (" + numberFormat(heliumExtractor) + ")";
     hydrogenCount.textContent = numberFormat(hydrogen) + " Hydrogen";
     hydrogenButton.textContent = "Hydrogen Extractor (" + numberFormat(hydrogenExtractor) + ")";
@@ -80,6 +84,17 @@ lithiumButton.onclick = () => {
     lithiumButton.textContent = "Lithium Extractor (" + numberFormat(lithiumExtractor) + ")";
 };
 
+let berylliumButton = document.createElement("div");
+berylliumButton.id = "beryllium-button";
+berylliumButton.className = "text display button centered";
+berylliumButton.dataset.size = "small";
+berylliumButton.textContent = "Beryllium Extractor (0)";
+
+berylliumButton.onclick = () => {
+    berylliumExtractor += 1;
+    berylliumButton.textContent = "Beryllium Extractor (" + numberFormat(berylliumExtractor) + ")";
+};
+
 
 tickspeedButton.onclick = () => {
     if (tickspeed == 0.01 && !heliumActivated) {
@@ -93,6 +108,12 @@ tickspeedButton.onclick = () => {
         tickspeed = 1000;
         tickspeedButton.textContent = "Tickspeed (" + numberFormat(tickspeed) + ")";
         lithiumActivated = true;
+        return;
+    } else if (tickspeed == 0.01 && !berylliumActivated) {
+        insertAfter(berylliumButton, lithiumButton);
+        tickspeed = 1000;
+        tickspeedButton.textContent = "Tickspeed (" + numberFormat(tickspeed) + ")";
+        berylliumActivated = true;
         return;
     }
 
