@@ -3,6 +3,8 @@
 /*jslint esversion:6*/
 "use strict";
 
+let version = document.getElementById("version").textContent = "ALPHA 0.0.5";
+
 function insertAfter(newNode, referenceNode) {
     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 }
