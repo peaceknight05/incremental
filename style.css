@@ -48,6 +48,7 @@
 }
 
 .button {
+    align-items: center;
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 15px;
@@ -56,6 +57,6 @@
     border-radius: 8px;
     color: #000000;
     background-color: #fffff1;
-    margin-left: 44vw;
-    margin-right: 44vw;
+    margin-left: 40vw;
+    margin-right: 40vw;
 }

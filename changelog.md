@@ -27,3 +27,11 @@ Added Lithium upgrades
 ## ALPHA 0.0.6
 
 Added Beryllium upgrades
+
+## ALPHA 0.0.7
+
+Added cost and reformatting
+
+## ALPHA 0.0.8
+
+Implemented cost increase formulas for tickspeed and extractor
