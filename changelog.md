@@ -35,3 +35,13 @@ Added cost and reformatting
 ## ALPHA 0.0.8
 
 Implemented cost increase formulas for tickspeed and extractor
+
+## ALPHA 0.0.9
+
+Fixed formatting issues and rebalanced tickspeed upgrades
+Fixed upgrades not showing error
+
+## ALPHA 0.1.0
+
+Added cookie functions to save and load progress (and reset)
+Rebalance upgrades
